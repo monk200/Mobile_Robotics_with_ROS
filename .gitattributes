@@ -1,2 +1,3 @@
 *.cpp linguist-detectable=true
 *.make linguist-detectable=false
+*.cmake linguist-detectable=false
