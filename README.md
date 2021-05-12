@@ -1,2 +1,12 @@
 # Mobile_Robotics_with_ROS
-My code from Introduction to Autonomous Vehicle Systems with Prof. Bob Norris at UIUC
+This repository contains code from the lab portion of Introduction to Autonomous Vehicle Systems with Prof. Bob Norris at UIUC. The lab primarily used ROS in C++ to interface with various simulators, sensors, and a small robotic car. Course content available at http://coecsl.ece.illinois.edu/se498/.  
+  
+Please do not steal the code if you are currently in the course, there is no guarentee that any of it is correct or up to date.  
+
+## Content
+The organization of this repository is slightly different from my others since this uploads the entire catkin workspace. Code for each specific lab can be found in the <code>src</code> folder. The names of each lab are also not as self-explanatory as my other repos so these content summaries and links will be very helpful! Each portion of the project will still have its own README file explaining how the lab was done and showing any output files. The course provided code in certain areas and had students interface with it, so the README will also specify what parts of the code I completed.  
+* [se498_lab1](https://github.com/monk200/Mobile_Robotics_with_ROS/tree/main/src/se498_lab1): This lab walked students through using the terminal to create a catkin workspace, write a simple [ROS package](https://github.com/monk200/Mobile_Robotics_with_ROS/blob/main/src/se498_lab1/src/lab1.cpp) that transmits a string to the terminal, and modify [CMakeLists.txt](https://github.com/monk200/Mobile_Robotics_with_ROS/blob/main/src/se498_lab1/CMakeLists.txt) to include the created ROS node.
+* [set498_lab1_2](https://github.com/monk200/Mobile_Robotics_with_ROS/tree/main/src/se498_lab1_2): TBA
+
+## Setup
+All of these labs were completed on a system running Ubuntu 16.04 with ROS Kinetic installed. Many hours were spent trying to run these programs in Windows Subsystem for Linux (WSL), booting Linux off a flash drive with persistent memory, and on more recent versions of Ubuntu. I learned that ROS Kinetic only runs on Ubuntu 15.10, Ubuntu 16.04, and Debian 8 and I learned that WSL is not the tool for every job. I personally did not want to partition my computer's hard drive to dual-boot Linux so I was trying the portable option but was running into a roadblock where it wouldn't actually let me run the program. Ultimately, I converted an old Chromebook to run Linux and I would recommend also using an old computer for Linux or being brave enough to partition your main computer.
