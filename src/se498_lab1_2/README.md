@@ -1,0 +1,15 @@
+# Lab 1, pt. 2: Creating a ROS Package to Control Turtlesim
+The instructions to this lab can be found at [this link](http://coecsl.ece.illinois.edu/se498/SE498%20Lab1.pdf), where part 2 starts at section 3 (page 7). A similar tutorial can be found on the [ROS Wiki](http://wiki.ros.org/turtlesim). At the end of the lab, students have created a program that uses a proportional controller to drive the turtle to a pre-set location. By changing the driver code slightly, the program can also be used to either make the turtle move horizontally a certain distance and speed or rotate to a certain angle at a certain speed.   
+
+## Edited Files
+All of the work I've done to this code is in [lab1_2.cpp](https://github.com/monk200/Mobile_Robotics_with_ROS/blob/main/src/se498_lab1_2/src/lab1_2.cpp). I created the <code>rotate</code> function, modeling it after the provided <code>move</code> function, and filled in calculations for the proportional controller in the while loop of the <code>moveGoal</code> function.  
+
+## Running and Testing
+Running this program requires opening three terminals, all at the catkin workspace directory. In the first terminal, type <code>source devel/setup.bash</code> as it is always needed in any new terminal. Follow this by typing <code>catkin_make</code> and then <code>roscore</code> to build an execuatable and start running ROS. In the second terminal, type <code>source devel/setup.bash></code> again, followed by <code>rosrun turtlesim turtlesim_node</code>. This will run <code>turtlesim_node</code>, opening a new window with the turtle in the center of the screen. Fun fact: the turtle design is randomized! Finally, in the third terminal run <code>source devel/setup.bash</code> as always and then run <code>rosrun se498_lab1_2 lab1_2_node</code>. This runs the executable built in the first terminal from [lab1_2.cpp](https://github.com/monk200/Mobile_Robotics_with_ROS/blob/main/src/se498_lab1_2/src/lab1_2.cpp).  
+
+To change the driver code (primarily used to test the <code>rotate</code> function), lines 50-56 and 61-68 need to be uncommented. Lines 72-76 need to be commented out. Otherwise, running the program is the same. The terminal will prompt the user to enter speed, distance, and a boolean for if the turtle is moving forward. This portion of the code tests the <code>move</code> function and can only move the turtle horizontally once. Next the terminal prompts the user to enter angular speed, the final angle, and a boolean for if the turtle should rotate clockwise or not. This portion of the code tests the <code>rotate</code> function and can only rotate the turtle in place once.  
+
+## Output
+Since the alternate use of this code is mainly to test individual functionality, the only output shared is the proportional controller for going to a desired location and orientation. The image below is of the final output, but it links to a video demo.  
+
+[![turtlesim proportional controller](https://img.youtube.com/vi/7UYlUK17rCY/0.jpg)](https://youtu.be/7UYlUK17rCY)
