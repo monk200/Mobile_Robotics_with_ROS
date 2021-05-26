@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/install
+
+Name: cardriver
+Description: Description of cardriver
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy serial std_msgs sensor_msgs geometry_msgs message_runtime

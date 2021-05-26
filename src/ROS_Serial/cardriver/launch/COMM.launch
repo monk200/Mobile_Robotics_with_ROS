@@ -1,0 +1,4 @@
+<launch>
+    <rosparam command="load" file="$(find cardriver)/yaml/setting.yaml" />
+    <node name="com_node" pkg="cardriver" type="com_node" args="" respawn="true" output="screen" />
+</launch>

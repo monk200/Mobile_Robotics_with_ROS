@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libcardriver_structs.so -o /home/user/catkin_ws/devel/lib/libcardriver_structs.so CMakeFiles/cardriver_structs.dir/include/cardriver/structs.c.o 

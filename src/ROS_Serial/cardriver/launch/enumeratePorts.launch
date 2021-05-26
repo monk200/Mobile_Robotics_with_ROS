@@ -1,0 +1,3 @@
+<launch>
+<node name="com_node" pkg="cardriver" type="com_node" args="-e" respawn="false" output="screen"/>
+</launch>

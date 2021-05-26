@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/install
+
+Name: lab2
+Description: Description of lab2
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy

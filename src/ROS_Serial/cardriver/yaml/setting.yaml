@@ -1,0 +1,14 @@
+# parameter settings for ComNode
+timer_rate: 15500   # in hz 14400 or higher for 115200 baud?
+baud_rate: 115200
+#port: '/dev/ttyACM0'
+port: '/dev/ttyUSB0'
+#port: '/dev/ttyS0'
+####################### serial timeout setting, default to 0
+inter_byte_timeout: 0       #Number of milliseconds between bytes received to timeout on.
+read_timeout_constant: 0    #A constant number of milliseconds to wait after calling read.
+read_timeout_multiplier: 0  #A multiplier against the number of requested bytes to wait after calling read.
+write_timeout_constant: 0   #A constant number of milliseconds to wait after calling write.
+write_timeout_multiplier: 0 #A multiplier against the number of requested bytes to wait after calling write.
+#######################
+wheel_base_distance: 0.20 #in meters

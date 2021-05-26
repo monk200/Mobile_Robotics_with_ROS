@@ -5,5 +5,8 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(ROS_Serial/serial)
 subdirs(se498_lab1)
 subdirs(se498_lab1_2)
+subdirs(ROS_Serial/cardriver)
+subdirs(SE498Lab2_skeleton)

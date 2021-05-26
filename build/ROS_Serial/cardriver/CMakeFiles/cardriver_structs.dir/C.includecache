@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/catkin_ws/src/ROS_Serial/cardriver/include/cardriver/structs.c
+structs.h
+/home/user/catkin_ws/src/ROS_Serial/cardriver/include/cardriver/structs.h
+
+/home/user/catkin_ws/src/ROS_Serial/cardriver/include/cardriver/structs.h
+stdint.h
+-
+stdbool.h
+-
+

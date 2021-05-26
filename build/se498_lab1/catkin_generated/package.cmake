@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "se498_lab1")
 set(se498_lab1_VERSION "0.0.0")
-set(se498_lab1_MAINTAINER "user <user@todo.todo>")
+set(se498_lab1_MAINTAINER "ros <ros@todo.todo>")
 set(se498_lab1_PACKAGE_FORMAT "2")
 set(se498_lab1_BUILD_DEPENDS "roscpp")
 set(se498_lab1_BUILD_EXPORT_DEPENDS "roscpp")
