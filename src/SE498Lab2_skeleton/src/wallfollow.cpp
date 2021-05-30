@@ -49,7 +49,7 @@ void WallFollow::switchCallback(const std_msgs::UInt8::ConstPtr &msg){
   switches[3] = msg->data & 0x08;
   switches[4] = msg->data & 0x10;
   switches[5] = msg->data & 0x20;
-	
+
 #ifdef TEST_SW
   for(uint8_t i = 0; i<6; ++i){
     if(!switches[i] )
@@ -79,7 +79,7 @@ void WallFollow::infraredCallback(const cardriver::infrared::ConstPtr &msg){
   infrared[2] = msg->right;
   infrared[3] = msg->rearLeft;
   infrared[4] = msg->rearRight;
-	
+
 #ifdef TEST_IR
   std::cout<<"left infrared is \t"<< (int)infrared[0];
   std::cout<<"\t middle infrared is \t" << (int)infrared[1];
@@ -130,7 +130,7 @@ void WallFollow::encoderCallback(const cardriver::encoder::ConstPtr &msg){
   encoder[1] = msg->right;
   encoder[2] = msg->leftPos;
   encoder[3] = msg->rightPos;
-	
+
 #ifdef TEST_ENCODER
   std::cout<<"left speed is \t"<< (int)encoder[0] <<std::endl;
   std::cout<<"right speed is \t" << (int)encoder[1] <<std::endl;
@@ -165,34 +165,106 @@ void WallFollow::timerCallback(const ros::SteadyTimerEvent &e){
   int errorR = 0;
   int errorRL = 0;
   int errorRR = 0;
-  
+
   errorL = infrared[0] - 15; // error of left sensor to target ??
   errorM = infrared[1] - 15; // error of middle sensor to target ??
   errorR = infrared[2] - 15; // error of right sensor to target ??
   errorRL = infrared[3] - 15; // error of rear left sensor to target ??
   errorRR = infrared[4] - 15; // error of rear right sensor to target ??
 
+  /*
+   * state 0: no wall, turn towards where wall should be
+   * state 1: wall on side, go straight
+   * state 2: wall in front and side, turn away from wall
+   */
+
+  int prev_state = state;
+
   switch (wallFollowInput) {
-
-
   case 0: // left wall follow
     //@HERE replace code below with your own code for left wall follow
+    switch (prev_state) {
+      // no wall
+      case 0:
+        if (errorL < 0) state = 0;
+        else if (errorM >= 0 && errorL >= 0) state = 2;
+        else state = 1;
+      // wall on left
+      case 1:
+        double distToWall = (errorL + errorRL)/2;
+        if (distToWall >= 0 && abs(distToWall - errorL) < 3) state = 1;
+        else if (errorL >= 0 && errorRL < 0) state = 2;
+        else if (errorL >= 0 && errorM >= 0) state = 2;
+        else state = 0;
+      // wall in front and left
+      case 2:
+        if (errorM >= 0) state = 2;
+        else if (errorL < 0) state  = 0;
+        else state = 1;
+    }
 
-    cmdMsg.angular.z = fmax(fmin(errorL * 100, 2000), -2000); 
-    cmdMsg.linear.x = 0;
-	
+    switch (state) {
+      // turn left
+      case 0:
+        cmdMsg.angular.z = 500;
+        cmdMsg.linear.x = 100;
+      // go straight
+      case 1:
+        cmdMsg.angular.z = 0;
+        cmdMsg.linear.x = 150;
+      // turn right
+      case 2:
+        cmdMsg.angular.z = -500;
+        cmdMsg.linear.x = 100;
+    }
+
+    //cmdMsg.angular.z = fmax(fmin(errorL * 100, 2000), -2000);
+    //cmdMsg.linear.x = 0;
+
     cmdPub.publish(cmdMsg);
     break;
 
-
   case 1: // right wall follow
     //@ HERE replace code below with your own code for right wall follow
+    switch (prev_state) {
+      // no wall
+      case 0:
+        if (errorR < 0) state = 0;
+        else if (errorM >= 0 && errorR >= 0) state = 2;
+        else state = 1;
+      // wall on right
+      case 1:
+        double distToWall = (errorR + errorRR)/2;
+        if (distToWall >= 0 && abs(distToWall - errorR) < 3) state = 1;
+        else if (errorR >= 0 && errorRR < 0) state = 2;
+        else if (errorR >= 0 && errorM >= 0) state = 2;
+        else state = 0;
+      // wall in front and right
+      case 2:
+        if (errorM >= 0) state = 2;
+        else if (errorR < 0) state  = 0;
+        else state = 1;
+    }
 
-    cmdMsg.angular.z = fmax(fmin(errorR * 100, 2000), -2000); 
-    cmdMsg.linear.x = 0;
+    switch (state) {
+      // turn right
+      case 0:
+        cmdMsg.angular.z = -500;
+        cmdMsg.linear.x = 100;
+      // go straight
+      case 1:
+        cmdMsg.angular.z = 0;
+        cmdMsg.linear.x = 150;
+      // turn left
+      case 2:
+        cmdMsg.angular.z = 500;
+        cmdMsg.linear.x = 100;
+    }
+
+    //cmdMsg.angular.z = fmax(fmin(errorL * 100, 2000), -2000);
+    //cmdMsg.linear.x = 0;
 
     cmdPub.publish(cmdMsg);
-
     break;
 
   default: // should not happen
