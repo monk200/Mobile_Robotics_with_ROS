@@ -166,6 +166,7 @@ void WallFollow::timerCallback(const ros::SteadyTimerEvent &e){
   int errorRL = 0;
   int errorRR = 0;
 
+  // adjust each constant so that error = 0 when sensor is desired distance from wall when parallel
   errorL = infrared[0] - 15; // error of left sensor to target ??
   errorM = infrared[1] - 15; // error of middle sensor to target ??
   errorR = infrared[2] - 15; // error of right sensor to target ??
@@ -189,7 +190,7 @@ void WallFollow::timerCallback(const ros::SteadyTimerEvent &e){
         if (errorL < 0) state = 0;
         else if (errorM >= 0 && errorL >= 0) state = 2;
         else state = 1;
-      // wall on left
+      // wall on left   NEEDS MORE TUNING
       case 1:
         double distToWall = (errorL + errorRL)/2;
         if (distToWall >= 0 && abs(distToWall - errorL) < 3) state = 1;
@@ -199,7 +200,7 @@ void WallFollow::timerCallback(const ros::SteadyTimerEvent &e){
       // wall in front and left
       case 2:
         if (errorM >= 0) state = 2;
-        else if (errorL < 0) state  = 0;
+        else if (errorL < 0) state = 0;
         else state = 1;
     }
 
