@@ -1,0 +1,14 @@
+<launch>
+
+	<node name="usb_camera_node" pkg="usb_cam" type="usb_cam_node" output="screen" >
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <!--<remap from="image" to="/camera/image_raw"/>-->
+	</node>
+
+	<node name="image_pub_sub_cpp" pkg="lab4" type="image_pub_sub_cpp" output="screen" >
+	</node>
+
+</launch>
