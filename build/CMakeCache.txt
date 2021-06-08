@@ -14,8 +14,29 @@
 # EXTERNAL cache entries
 ########################
 
+//The threading library used by boost-thread
+BOOST_THREAD_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
+
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
+
+//Boost atomic library (debug)
+Boost_ATOMIC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_atomic.so
+
+//Boost atomic library (release)
+Boost_ATOMIC_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_atomic.so
+
+//Boost chrono library (debug)
+Boost_CHRONO_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_chrono.so
+
+//Boost chrono library (release)
+Boost_CHRONO_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_chrono.so
+
+//Boost date_time library (debug)
+Boost_DATE_TIME_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_date_time.so
+
+//Boost date_time library (release)
+Boost_DATE_TIME_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_date_time.so
 
 //The directory containing a CMake configuration file for Boost.
 Boost_DIR:PATH=Boost_DIR-NOTFOUND
@@ -34,6 +55,12 @@ Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_system.so
 
 //Boost system library (release)
 Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_system.so
+
+//Boost thread library (debug)
+Boost_THREAD_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_thread.so
+
+//Boost thread library (release)
+Boost_THREAD_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_thread.so
 
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
@@ -241,6 +268,12 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/opt/ros/kinetic/share/OpenCV-3.3.1-dev
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python2
 
@@ -280,6 +313,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//The directory containing a CMake configuration file for camera_calibration_parsers.
+camera_calibration_parsers_DIR:PATH=/opt/ros/kinetic/share/camera_calibration_parsers/cmake
+
+//The directory containing a CMake configuration file for camera_info_manager.
+camera_info_manager_DIR:PATH=/opt/ros/kinetic/share/camera_info_manager/cmake
+
 //Value Computed by CMake
 cardriver_BINARY_DIR:STATIC=/home/user/catkin_ws/build/ROS_Serial/cardriver
 
@@ -298,8 +337,17 @@ cardriver_structs_LIB_DEPENDS:STATIC=
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
+
+//The directory containing a CMake configuration file for controller_manager.
+controller_manager_DIR:PATH=controller_manager_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
+
+//The directory containing a CMake configuration file for cv_bridge.
+cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
@@ -362,20 +410,107 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
+
+//Value Computed by CMake
+jackal_base_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_base
+
+//Value Computed by CMake
+jackal_base_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_base
+
+//Value Computed by CMake
+jackal_bringup_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_bringup
+
+//Value Computed by CMake
+jackal_bringup_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_bringup
+
+//Value Computed by CMake
+jackal_control_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_control
+
+//Value Computed by CMake
+jackal_control_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_control
+
+//Value Computed by CMake
+jackal_description_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_description
+
+//Value Computed by CMake
+jackal_description_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_description
+
+//Value Computed by CMake
+jackal_desktop_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_desktop
+
+//Value Computed by CMake
+jackal_desktop_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_desktop
+
+//Value Computed by CMake
+jackal_gazebo_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_gazebo
+
+//Value Computed by CMake
+jackal_gazebo_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_gazebo
+
+//Value Computed by CMake
+jackal_msgs_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_msgs
+
+//Value Computed by CMake
+jackal_msgs_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_msgs
+
+//Value Computed by CMake
+jackal_navigation_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_navigation
+
+//Value Computed by CMake
+jackal_navigation_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_navigation
+
+//Value Computed by CMake
+jackal_robot_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_robot
+
+//Value Computed by CMake
+jackal_robot_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_robot
+
+//Value Computed by CMake
+jackal_simulator_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_simulator
+
+//Value Computed by CMake
+jackal_simulator_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_simulator
+
+//Value Computed by CMake
+jackal_viz_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/jackal_pkgs/jackal_viz
+
+//Value Computed by CMake
+jackal_viz_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_viz
+
 //Value Computed by CMake
 lab2_BINARY_DIR:STATIC=/home/user/catkin_ws/build/SE498Lab2_skeleton
 
 //Value Computed by CMake
 lab2_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/SE498Lab2_skeleton
 
+//Value Computed by CMake
+lab4_BINARY_DIR:STATIC=/home/user/catkin_ws/build/se498_lab4
+
+//Value Computed by CMake
+lab4_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/se498_lab4
+
 //Path to a library.
-lib:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libcamera_calibration_parsers.so
+
+//The directory containing a CMake configuration file for message_filters.
+message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
 
 //The directory containing a CMake configuration file for message_generation.
 message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
+
+//Value Computed by CMake
+nmea_msgs_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/nmea_msgs
+
+//Value Computed by CMake
+nmea_msgs_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/nmea_msgs
+
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
 
 //Value Computed by CMake
 proportionalTurtleCtrl_BINARY_DIR:STATIC=/home/user/catkin_ws/build/proportionalTurtleCtrl
@@ -401,8 +536,32 @@ roscpp_traits_DIR:PATH=/opt/ros/kinetic/share/roscpp_traits/cmake
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/kinetic/share/rosgraph_msgs/cmake
 
+//The directory containing a CMake configuration file for roslaunch.
+roslaunch_DIR:PATH=/opt/ros/kinetic/share/roslaunch/cmake
+
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/kinetic/share/roslib/cmake
+
+//The directory containing a CMake configuration file for rospack.
+rospack_DIR:PATH=/opt/ros/kinetic/share/rospack/cmake
+
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/kinetic/share/rospy/cmake
+
+//Value Computed by CMake
+rosserial_msgs_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/rosserial_pkgs/rosserial_msgs
+
+//The directory containing a CMake configuration file for rosserial_msgs.
+rosserial_msgs_DIR:PATH=/home/user/catkin_ws/devel/share/rosserial_msgs/cmake
+
+//Value Computed by CMake
+rosserial_msgs_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_msgs
+
+//Value Computed by CMake
+rosserial_server_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/rosserial_pkgs/rosserial_server
+
+//Value Computed by CMake
+rosserial_server_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_server
 
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
@@ -440,6 +599,51 @@ serial_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/ROS_Serial/serial
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
 
+//The directory containing a CMake configuration file for std_srvs.
+std_srvs_DIR:PATH=/opt/ros/kinetic/share/std_srvs/cmake
+
+//Value Computed by CMake
+teleop_twist_keyboard_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/teleop_twist_keyboard
+
+//Value Computed by CMake
+teleop_twist_keyboard_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/teleop_twist_keyboard
+
+//The directory containing a CMake configuration file for topic_tools.
+topic_tools_DIR:PATH=/opt/ros/kinetic/share/topic_tools/cmake
+
+//Value Computed by CMake
+usb_cam_BINARY_DIR:STATIC=/home/user/catkin_ws/build/usb_cam
+
+//Dependencies for the target
+usb_cam_LIB_DEPENDS:STATIC=general;avcodec-ffmpeg;general;swscale-ffmpeg;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+
+//Value Computed by CMake
+usb_cam_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/usb_cam
+
+//Value Computed by CMake
+velodyne_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/velodyne_pkgs/velodyne
+
+//Value Computed by CMake
+velodyne_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/velodyne_pkgs/velodyne
+
+//Value Computed by CMake
+velodyne_description_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/velodyne_sim_pkgs/velodyne_description
+
+//Value Computed by CMake
+velodyne_description_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/velodyne_sim_pkgs/velodyne_description
+
+//Value Computed by CMake
+velodyne_msgs_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/velodyne_pkgs/velodyne_msgs
+
+//Value Computed by CMake
+velodyne_msgs_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/velodyne_pkgs/velodyne_msgs
+
+//Value Computed by CMake
+velodyne_simulator_BINARY_DIR:STATIC=/home/user/catkin_ws/build/jackal_simulator/velodyne_sim_pkgs/velodyne_simulator
+
+//Value Computed by CMake
+velodyne_simulator_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/jackal_simulator/velodyne_sim_pkgs/velodyne_simulator
+
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
 
@@ -448,6 +652,18 @@ xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_ATOMIC_LIBRARY_DEBUG
+Boost_ATOMIC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_ATOMIC_LIBRARY_RELEASE
+Boost_ATOMIC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_CHRONO_LIBRARY_DEBUG
+Boost_CHRONO_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_CHRONO_LIBRARY_RELEASE
+Boost_CHRONO_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_DATE_TIME_LIBRARY_DEBUG
+Boost_DATE_TIME_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_DATE_TIME_LIBRARY_RELEASE
+Boost_DATE_TIME_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_DIR
 Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_INCLUDE_DIR
@@ -460,6 +676,10 @@ Boost_LIBRARY_DIR_RELEASE-ADVANCED:INTERNAL=1
 Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
 Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_THREAD_LIBRARY_DEBUG
+Boost_THREAD_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_THREAD_LIBRARY_RELEASE
+Boost_THREAD_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/user/catkin_ws/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/user/catkin_ws/build/test_results
@@ -557,7 +777,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -596,6 +816,10 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/opt/ros/kinetic][v3.3.1()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.12()]
 //Details about finding Threads
@@ -620,6 +844,8 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
@@ -627,7 +853,7 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=system
+_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;system;thread
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR_DEBUG value.
@@ -638,4 +864,75 @@ _Boost_LIBRARY_DIR_RELEASE_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
 _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
+__pkg_config_checked_avcodec:INTERNAL=1
+__pkg_config_checked_swscale:INTERNAL=1
+avcodec_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+avcodec_CFLAGS_I:INTERNAL=
+avcodec_CFLAGS_OTHER:INTERNAL=
+avcodec_FOUND:INTERNAL=1
+avcodec_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
+avcodec_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+avcodec_LDFLAGS:INTERNAL=-lavcodec-ffmpeg
+avcodec_LDFLAGS_OTHER:INTERNAL=
+avcodec_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+avcodec_LIBRARIES:INTERNAL=avcodec-ffmpeg
+avcodec_LIBRARY_DIRS:INTERNAL=
+avcodec_LIBS:INTERNAL=
+avcodec_LIBS_L:INTERNAL=
+avcodec_LIBS_OTHER:INTERNAL=
+avcodec_LIBS_PATHS:INTERNAL=
+avcodec_PREFIX:INTERNAL=/usr
+avcodec_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+avcodec_STATIC_CFLAGS_I:INTERNAL=
+avcodec_STATIC_CFLAGS_OTHER:INTERNAL=
+avcodec_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+avcodec_STATIC_LDFLAGS:INTERNAL=-lavcodec-ffmpeg;-lXv;-lX11;-lXext;-ldl;-lva;-lva-x11;-lva;-lxcb;-lxcb-shm;-lxcb;-lxcb-xfixes;-lxcb-render;-lxcb-shape;-lxcb;-lxcb-shape;-lxcb;-lX11;-lcdio_paranoia;-lcdio_cdda;-lcdio;-ljack;-lasound;-lSDL;-ldc1394;-lgmp;-lGL;-lopenal;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-logg;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lschroedinger-1.0;-lrtmp;-lz;-lgmp;-lpulse;-lopus;-lopenjpeg;-DOPJ_STATIC;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so;-lopencv_calib3d;/usr/lib/x86_64-linux-gnu/libopencv_contrib.so;-lopencv_contrib;/usr/lib/x86_64-linux-gnu/libopencv_core.so;-lopencv_core;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so;-lopencv_features2d;/usr/lib/x86_64-linux-gnu/libopencv_flann.so;-lopencv_flann;/usr/lib/x86_64-linux-gnu/libopencv_gpu.so;-lopencv_gpu;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so;-lopencv_highgui;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so;-lopencv_imgproc;/usr/lib/x86_64-linux-gnu/libopencv_legacy.so;-lopencv_legacy;/usr/lib/x86_64-linux-gnu/libopencv_ml.so;-lopencv_ml;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so;-lopencv_objdetect;/usr/lib/x86_64-linux-gnu/libopencv_ocl.so;-lopencv_ocl;/usr/lib/x86_64-linux-gnu/libopencv_photo.so;-lopencv_photo;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so;-lopencv_stitching;/usr/lib/x86_64-linux-gnu/libopencv_superres.so;-lopencv_superres;/usr/lib/x86_64-linux-gnu/libopencv_ts.so;-lopencv_ts;/usr/lib/x86_64-linux-gnu/libopencv_video.so;-lopencv_video;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so;-lopencv_videostab;-lmp3lame;-lmodplug;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-ldl;-lcrystalhd;-lm;-llzma;-lbz2;-lz;-pthread;-lswresample-ffmpeg;-lm;-lsoxr;-lavutil-ffmpeg;-lm
+avcodec_STATIC_LDFLAGS_OTHER:INTERNAL=-DOPJ_STATIC;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so;/usr/lib/x86_64-linux-gnu/libopencv_contrib.so;/usr/lib/x86_64-linux-gnu/libopencv_core.so;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so;/usr/lib/x86_64-linux-gnu/libopencv_flann.so;/usr/lib/x86_64-linux-gnu/libopencv_gpu.so;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so;/usr/lib/x86_64-linux-gnu/libopencv_legacy.so;/usr/lib/x86_64-linux-gnu/libopencv_ml.so;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so;/usr/lib/x86_64-linux-gnu/libopencv_ocl.so;/usr/lib/x86_64-linux-gnu/libopencv_photo.so;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so;/usr/lib/x86_64-linux-gnu/libopencv_superres.so;/usr/lib/x86_64-linux-gnu/libopencv_ts.so;/usr/lib/x86_64-linux-gnu/libopencv_video.so;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so;-pthread
+avcodec_STATIC_LIBDIR:INTERNAL=
+avcodec_STATIC_LIBRARIES:INTERNAL=avcodec-ffmpeg;Xv;X11;Xext;dl;va;va-x11;va;xcb;xcb-shm;xcb;xcb-xfixes;xcb-render;xcb-shape;xcb;xcb-shape;xcb;X11;cdio_paranoia;cdio_cdda;cdio;jack;asound;SDL;dc1394;gmp;GL;openal;zvbi;zmq;xvidcore;x265;x264;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;ogg;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;schroedinger-1.0;rtmp;z;gmp;pulse;opus;openjpeg;opencv_calib3d;opencv_contrib;opencv_core;opencv_features2d;opencv_flann;opencv_gpu;opencv_highgui;opencv_imgproc;opencv_legacy;opencv_ml;opencv_objdetect;opencv_ocl;opencv_photo;opencv_stitching;opencv_superres;opencv_ts;opencv_video;opencv_videostab;mp3lame;modplug;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;dl;crystalhd;m;lzma;bz2;z;swresample-ffmpeg;m;soxr;avutil-ffmpeg;m
+avcodec_STATIC_LIBRARY_DIRS:INTERNAL=
+avcodec_STATIC_LIBS:INTERNAL=
+avcodec_STATIC_LIBS_L:INTERNAL=
+avcodec_STATIC_LIBS_OTHER:INTERNAL=
+avcodec_STATIC_LIBS_PATHS:INTERNAL=
+avcodec_VERSION:INTERNAL=56.60.100
+avcodec_libavcodec_INCLUDEDIR:INTERNAL=
+avcodec_libavcodec_LIBDIR:INTERNAL=
+avcodec_libavcodec_PREFIX:INTERNAL=
+avcodec_libavcodec_VERSION:INTERNAL=
+prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
+swscale_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+swscale_CFLAGS_I:INTERNAL=
+swscale_CFLAGS_OTHER:INTERNAL=
+swscale_FOUND:INTERNAL=1
+swscale_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
+swscale_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+swscale_LDFLAGS:INTERNAL=-lswscale-ffmpeg
+swscale_LDFLAGS_OTHER:INTERNAL=
+swscale_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+swscale_LIBRARIES:INTERNAL=swscale-ffmpeg
+swscale_LIBRARY_DIRS:INTERNAL=
+swscale_LIBS:INTERNAL=
+swscale_LIBS_L:INTERNAL=
+swscale_LIBS_OTHER:INTERNAL=
+swscale_LIBS_PATHS:INTERNAL=
+swscale_PREFIX:INTERNAL=/usr
+swscale_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+swscale_STATIC_CFLAGS_I:INTERNAL=
+swscale_STATIC_CFLAGS_OTHER:INTERNAL=
+swscale_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+swscale_STATIC_LDFLAGS:INTERNAL=-lswscale-ffmpeg;-lm;-lavutil-ffmpeg;-lm
+swscale_STATIC_LDFLAGS_OTHER:INTERNAL=
+swscale_STATIC_LIBDIR:INTERNAL=
+swscale_STATIC_LIBRARIES:INTERNAL=swscale-ffmpeg;m;avutil-ffmpeg;m
+swscale_STATIC_LIBRARY_DIRS:INTERNAL=
+swscale_STATIC_LIBS:INTERNAL=
+swscale_STATIC_LIBS_L:INTERNAL=
+swscale_STATIC_LIBS_OTHER:INTERNAL=
+swscale_STATIC_LIBS_PATHS:INTERNAL=
+swscale_VERSION:INTERNAL=3.1.101
+swscale_libswscale_INCLUDEDIR:INTERNAL=
+swscale_libswscale_LIBDIR:INTERNAL=
+swscale_libswscale_PREFIX:INTERNAL=
+swscale_libswscale_VERSION:INTERNAL=
 

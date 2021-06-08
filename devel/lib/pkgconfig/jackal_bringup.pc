@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/devel
+
+Name: jackal_bringup
+Description: Description of jackal_bringup
+Version: 0.3.7
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

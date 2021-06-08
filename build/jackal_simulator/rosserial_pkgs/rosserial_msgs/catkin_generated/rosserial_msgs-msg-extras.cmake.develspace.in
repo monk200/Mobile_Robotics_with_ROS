@@ -1,0 +1,2 @@
+set(rosserial_msgs_MESSAGE_FILES "/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_msgs/msg/Log.msg;/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_msgs/msg/TopicInfo.msg")
+set(rosserial_msgs_SERVICE_FILES "/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_msgs/srv/RequestMessageInfo.srv;/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_msgs/srv/RequestParam.srv;/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_msgs/srv/RequestServiceInfo.srv")

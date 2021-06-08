@@ -66,16 +66,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -88,16 +89,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : test/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -121,17 +122,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,216 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-se498_lab1/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : se498_lab1/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: se498_lab1/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/roscpp_generate_messages_py.dir/build.make se498_lab1/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : se498_lab1/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: se498_lab1/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make se498_lab1/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : se498_lab1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: se498_lab1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make se498_lab1/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : se498_lab1/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: se498_lab1/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/roscpp_generate_messages_eus.dir/build.make se498_lab1/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make se498_lab1/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : se498_lab1/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: se498_lab1/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make se498_lab1/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : se498_lab1/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: se498_lab1/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make se498_lab1/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : se498_lab1/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: se498_lab1/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make se498_lab1/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : se498_lab1/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: se498_lab1/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make se498_lab1/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : se498_lab1/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: se498_lab1/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/std_msgs_generate_messages_py.dir/build.make se498_lab1/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 se498_lab1/CMakeFiles/lab1_node.dir/rule:
 	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/lab1_node.dir/rule
 .PHONY : se498_lab1/CMakeFiles/lab1_node.dir/rule
@@ -389,21 +179,6 @@ lab1_node: se498_lab1/CMakeFiles/lab1_node.dir/rule
 lab1_node/fast:
 	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/lab1_node.dir/build.make se498_lab1/CMakeFiles/lab1_node.dir/build
 .PHONY : lab1_node/fast
-
-# Convenience name for target.
-se498_lab1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : se498_lab1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: se498_lab1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab1/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make se498_lab1/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
 
 src/lab1.o: src/lab1.cpp.o
 
@@ -439,28 +214,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... edit_cache"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_py"
+	@echo "... edit_cache"
 	@echo "... lab1_node"
-	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... install"
+	@echo "... test"
 	@echo "... src/lab1.o"
 	@echo "... src/lab1.i"
 	@echo "... src/lab1.s"

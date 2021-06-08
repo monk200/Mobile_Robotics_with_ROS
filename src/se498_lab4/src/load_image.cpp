@@ -13,7 +13,7 @@ int main( )
        Mat gray_image;
 		
        // LOAD image
-       image = imread("/home/ros/catkin_NETID/src/se498_lab4/images/tennisball.jpg", CV_LOAD_IMAGE_COLOR);  
+       image = imread("/home/user/catkin_ws/src/se498_lab4/images/tennisball.jpg", CV_LOAD_IMAGE_COLOR);  
 
        if(!image.data)  // Check for invalid input
        {
