@@ -26,6 +26,7 @@ private:
   void timerCallback(const ros::SteadyTimerEvent& e);
   //private variables:
   bool switches[6] = {0,0,0,0,0,0};
+  uint8_t state = 0;
   uint8_t infrared[5] = {0,0,0,0,0};
   int16_t imuOrien[3] = {0,0,0};
   int16_t encoder[4] = {0,0,0,0};
