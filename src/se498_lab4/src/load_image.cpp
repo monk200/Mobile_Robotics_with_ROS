@@ -33,7 +33,7 @@ int main( )
 	     Canny(image, unblurred_edge_image, 100, 200);
 
        // GaussianBlur(input image, output image, kernel size width & height (must be positive and odd), kernel standard dev in x, kernel standard dev in y)
-       // here 11 is the max kernel length
+       // here 11 is the max kernel length for good quality image, lower to see more edges
        // based on example at https://docs.opencv.org/3.4/dc/dd3/tutorial_gausian_median_blur_bilateral_filter.html
        for (int i = 1; i < 11; i+=2) GaussianBlur(image, blurred_image, Size(i, i), 0, 0);
        Canny(blurred_image, blurred_edge_image, 100, 200);

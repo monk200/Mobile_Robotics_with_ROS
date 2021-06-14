@@ -42,35 +42,43 @@ class ImageConverter
 			}
 
 			// Draw an example circle on the video stream
-			if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60) {
-			  cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255,0,0));
-			}
+			//if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60) {
+			//  cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255,0,0));
+			//}
 			///////////////////////////////////////////////////////////////////////
 			///////////////////         Your code here         ////////////////////
 			///////////////////////////////////////////////////////////////////////
-			
 
-			
-			
-	
-			
+			cv::Mat temp_image;
+			for (int i = 1; i < 3; i+=2) GaussianBlur(cv_ptr->image, temp_image, cv::Size(i, i), 0, 0);
+			Canny(temp_image, cv_ptr->image, 100, 200);
+
+			int centerX = cv_ptr->image.cols/2;
+			int centerY = cv_ptr->image.rows/2;
+			if (cv_ptr->image.rows > 120 && cv_ptr->image.cols > 120)
+				cv::rectangle(cv_ptr->image, cv::Point(centerX-50, centerY-50), cv::Point(centerX+50, centerY+50), CV_RGB(255, 255, 255), 2);
+
+			if (cv_ptr->image.rows > 10 && cv_ptr->image.cols > 10) {
+				cv::line(cv_ptr->image, cv::Point(centerX-5, centerY), cv::Point(centerX+5, centerY), CV_RGB(255, 255, 255));
+				cv::line(cv_ptr->image, cv::Point(centerX, centerY-5), cv::Point(centerX, centerY+5), CV_RGB(255, 255, 255));
+			}
+
 			///////////////////////////////////////////////////////////////////////
 
 			// Update GUI Window
 			cv::imshow(OPENCV_WINDOW, cv_ptr->image);
-			
+
 			///////////////////////////////////////////////////////////////////////
 			///////////  Use the waitKey function to achieve image save  //////////
 			///////////////////////////////////////////////////////////////////////
-			cv::waitKey(3);
-			
-			
-			
-			
+			char c = cv::waitKey(3);
+			if (c == 's') imwrite("/home/user/catkin_ws/src/se498_lab4/images/video_still.jpg", cv_ptr->image);
+
+
 			///////////////////////////////////////////////////////////////////////
 
 			// Output modified video stream
-			// Convert this message to a ROS sensor_msgs::Image message. 
+			// Convert this message to a ROS sensor_msgs::Image message.
 			image_pub_.publish(cv_ptr->toImageMsg());
 		}
 };
