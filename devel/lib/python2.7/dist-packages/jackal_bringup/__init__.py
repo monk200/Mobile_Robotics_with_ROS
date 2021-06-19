@@ -6,7 +6,7 @@ from os import path as os_path
 from pkgutil import extend_path
 from sys import path as sys_path
 
-__extended_path = '/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_bringup/src'.split(';')
+__extended_path = '/home/user/catkin_ws/src/se498_lab5/jackal_simulator/jackal_pkgs/jackal_bringup/src'.split(';')
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

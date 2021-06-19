@@ -3,6 +3,6 @@ prefix=/home/user/catkin_ws/devel
 Name: rosserial_server
 Description: Description of rosserial_server
 Version: 0.8.0
-Cflags: -I/home/user/catkin_ws/src/jackal_simulator/rosserial_pkgs/rosserial_server/include
+Cflags: -I/home/user/catkin_ws/src/se498_lab5/jackal_simulator/rosserial_pkgs/rosserial_server/include
 Libs: -L${prefix}/lib 
 Requires: roscpp rosserial_msgs std_msgs topic_tools

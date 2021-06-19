@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/devel
+
+Name: velodyne_gazebo_plugins
+Description: Description of velodyne_gazebo_plugins
+Version: 1.0.8
+Cflags: -I/home/user/catkin_ws/src/se498_lab5/jackal_simulator/velodyne_sim_pkgs/velodyne_gazebo_plugins/include -I/usr/include -I/usr/include/gazebo-7 -I/usr/include/sdformat-4.0 -I/usr/include/ignition/math2 -I/usr/include/OGRE -I/usr/include/OGRE/Terrain -I/usr/include/OGRE/Paging
+Libs: -L${prefix}/lib -lgazebo_ros_velodyne_laser -lgazebo_ros_velodyne_gpu_laser
+Requires: roscpp sensor_msgs gazebo_ros

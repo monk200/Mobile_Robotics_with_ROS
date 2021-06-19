@@ -1,0 +1,7 @@
+set(jackal_bringup_SETUP_PY_SETUP_MODULE "distutils.core")
+set(jackal_bringup_SETUP_PY_VERSION "0.3.7")
+set(jackal_bringup_SETUP_PY_SCRIPTS "")
+set(jackal_bringup_SETUP_PY_PACKAGES "jackal_bringup")
+set(jackal_bringup_SETUP_PY_PACKAGE_DIRS "src/jackal_bringup")
+set(jackal_bringup_SETUP_PY_MODULES "")
+set(jackal_bringup_SETUP_PY_MODULE_DIRS "")

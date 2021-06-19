@@ -5,12 +5,7 @@
 # it emulates the modifications of the setup script without recurring computations
 
 # new environment variables
+export JACKAL_MAG_CONFIG='/home/user/catkin_ws/src/se498_lab5/jackal_simulator/jackal_pkgs/jackal_base/config/mag_config_default.yaml'
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/user/catkin_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/user/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/user/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/user/catkin_ws/build'
-export PYTHONPATH="/home/user/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/user/catkin_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/user/catkin_ws/src:$ROS_PACKAGE_PATH"

@@ -67,7 +67,7 @@ set(jackal_navigation_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(jackal_navigation_SOURCE_PREFIX /home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_navigation)
+  set(jackal_navigation_SOURCE_PREFIX /home/user/catkin_ws/src/se498_lab5/jackal_simulator/jackal_pkgs/jackal_navigation)
   set(jackal_navigation_DEVEL_PREFIX /home/user/catkin_ws/devel)
   set(jackal_navigation_INSTALL_PREFIX "")
   set(jackal_navigation_PREFIX ${jackal_navigation_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT " " STREQUAL " ")
         message(FATAL_ERROR "Project 'jackal_navigation' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'jackal_navigation' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/user/catkin_ws/src/jackal_simulator/jackal_pkgs/jackal_navigation/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'jackal_navigation' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/user/catkin_ws/src/se498_lab5/jackal_simulator/jackal_pkgs/jackal_navigation/${idir}'.  ${_report}")
     endif()
     _list_append_unique(jackal_navigation_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/user/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/user/catkin_ws/devel/lib;/home/user/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

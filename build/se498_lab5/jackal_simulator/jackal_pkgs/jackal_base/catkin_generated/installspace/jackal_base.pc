@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/install
+
+Name: jackal_base
+Description: Description of jackal_base
+Version: 0.3.7
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

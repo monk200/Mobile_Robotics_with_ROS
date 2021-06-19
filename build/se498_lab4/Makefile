@@ -125,7 +125,7 @@ install/strip/fast: install/strip
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"main\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -181,64 +181,19 @@ image_pub_sub_cpp/fast:
 .PHONY : image_pub_sub_cpp/fast
 
 # Convenience name for target.
-se498_lab4/CMakeFiles/read_camera_cpp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/read_camera_cpp.dir/rule
-.PHONY : se498_lab4/CMakeFiles/read_camera_cpp.dir/rule
+se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-read_camera_cpp: se498_lab4/CMakeFiles/read_camera_cpp.dir/rule
+rosgraph_msgs_generate_messages_cpp: se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : read_camera_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
 
 # fast build rule for target.
-read_camera_cpp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/read_camera_cpp.dir/build.make se498_lab4/CMakeFiles/read_camera_cpp.dir/build
-.PHONY : read_camera_cpp/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : se498_lab4/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: se498_lab4/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/std_msgs_generate_messages_py.dir/build.make se498_lab4/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 se498_lab4/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
@@ -301,6 +256,21 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
 	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : se498_lab4/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
@@ -329,36 +299,6 @@ roscpp_generate_messages_cpp: se498_lab4/CMakeFiles/roscpp_generate_messages_cpp
 roscpp_generate_messages_cpp/fast:
 	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make se498_lab4/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : se498_lab4/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: se498_lab4/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make se498_lab4/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 se498_lab4/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -406,21 +346,6 @@ roscpp_generate_messages_eus/fast:
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
-se498_lab4/CMakeFiles/load_image_cpp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/load_image_cpp.dir/rule
-.PHONY : se498_lab4/CMakeFiles/load_image_cpp.dir/rule
-
-# Convenience name for target.
-load_image_cpp: se498_lab4/CMakeFiles/load_image_cpp.dir/rule
-
-.PHONY : load_image_cpp
-
-# fast build rule for target.
-load_image_cpp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/load_image_cpp.dir/build.make se498_lab4/CMakeFiles/load_image_cpp.dir/build
-.PHONY : load_image_cpp/fast
-
-# Convenience name for target.
 se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
 	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : se498_lab4/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
@@ -451,6 +376,21 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+se498_lab4/CMakeFiles/load_image_cpp.dir/rule:
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/load_image_cpp.dir/rule
+.PHONY : se498_lab4/CMakeFiles/load_image_cpp.dir/rule
+
+# Convenience name for target.
+load_image_cpp: se498_lab4/CMakeFiles/load_image_cpp.dir/rule
+
+.PHONY : load_image_cpp
+
+# fast build rule for target.
+load_image_cpp/fast:
+	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/load_image_cpp.dir/build.make se498_lab4/CMakeFiles/load_image_cpp.dir/build
+.PHONY : load_image_cpp/fast
+
+# Convenience name for target.
 se498_lab4/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
 	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : se498_lab4/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
@@ -464,21 +404,6 @@ roscpp_generate_messages_nodejs: se498_lab4/CMakeFiles/roscpp_generate_messages_
 roscpp_generate_messages_nodejs/fast:
 	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make se498_lab4/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : se498_lab4/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: se498_lab4/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make se498_lab4/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 se498_lab4/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -496,49 +421,19 @@ roscpp_generate_messages_lisp/fast:
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
-se498_lab4/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : se498_lab4/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+se498_lab4/CMakeFiles/read_camera_cpp.dir/rule:
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/read_camera_cpp.dir/rule
+.PHONY : se498_lab4/CMakeFiles/read_camera_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: se498_lab4/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+read_camera_cpp: se498_lab4/CMakeFiles/read_camera_cpp.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : read_camera_cpp
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make se498_lab4/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make se498_lab4/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-se498_lab4/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : se498_lab4/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: se498_lab4/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make se498_lab4/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+read_camera_cpp/fast:
+	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/read_camera_cpp.dir/build.make se498_lab4/CMakeFiles/read_camera_cpp.dir/build
+.PHONY : read_camera_cpp/fast
 
 # Convenience name for target.
 se498_lab4/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
@@ -584,6 +479,36 @@ sensor_msgs_generate_messages_lisp: se498_lab4/CMakeFiles/sensor_msgs_generate_m
 sensor_msgs_generate_messages_lisp/fast:
 	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make se498_lab4/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make se498_lab4/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/user/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/user/catkin_ws/build && $(MAKE) -f se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make se498_lab4/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
 
 src/image_pub_sub.o: src/image_pub_sub.cpp.o
 
@@ -679,34 +604,29 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... image_pub_sub_cpp"
-	@echo "... read_camera_cpp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_eus"
-	@echo "... load_image_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... load_image_cpp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... read_camera_cpp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... src/image_pub_sub.o"
 	@echo "... src/image_pub_sub.i"
 	@echo "... src/image_pub_sub.s"
